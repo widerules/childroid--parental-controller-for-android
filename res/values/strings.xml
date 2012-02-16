@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, ChildroidActivity!</string>
+    <string name="hello">Hello Gihan, ChildroidActivity!</string>
     <string name="app_name">Childroid-4.0.3</string>
+    <string name="smsreceivetopic">SMS receive from Parentdroid</string>
+    <string name="smsreceivetxt">Recieved SMS</string>
+    <string name="smssendtxt">Sent SMS</string>
+    <string name="mainButton">Default Button</string>
+    <string name="showmsgbutton">Show Sent Msg</string>
+    <string name="smssendbody">Sent msg</string>
+    <string name="smssendtopic">Sent sms</string>
 
 </resources>
