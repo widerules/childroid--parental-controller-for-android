@@ -18,11 +18,13 @@ public class SMSSendActivity extends Activity {
 		TextView msgbody = (TextView) findViewById(R.id.etmsgbody);
 
 		Uri uriSMSURI = Uri.parse("content://sms/sent");
-		Cursor cur = getContentResolver().query(uriSMSURI, null, null, null,null);
+		Cursor cur = getContentResolver().query(uriSMSURI, null, null, null,
+				null);
 		String sms = "";
 		while (cur.moveToNext()) {
 			phonenum.setText(cur.getString(2));
-			sms += "From :" + cur.getString(2) + " : " + cur.getString(12)+ "\n";
+			sms += "From :" + cur.getString(2) + " : " + cur.getString(12)
+					+ "\n";
 		}
 		msgbody.setText(sms);
 	}
