@@ -16,7 +16,6 @@ public class SMSReceiveActivity extends Activity {
 
 		TextView phoneNum = (TextView) findViewById(R.id.tvsmsreceive);
 		TextView view = (TextView) findViewById(R.id.etsmsreceive);
-		
 
 		String[] messages = getIntent().getStringArrayExtra("msgset");
 		String msg = "";
@@ -26,14 +25,14 @@ public class SMSReceiveActivity extends Activity {
 		int i = 1;
 		while (null != currentMessage) {
 			sp = currentMessage.split(":");
-			phoneNum.setText("Form : "+sp[0]);
+			phoneNum.setText("Form : " + sp[0]);
 			msg += "Msg : " + sp[1] + "\n";
 			currentMessage = messages[i];
-			sendSMSParent(sp[0], "From : "+sp[0] + msg);
+			sendSMSParent(sp[0], "From : " + sp[0] + msg);
 			i++;
 		}
 
-		view.setText(msg);		
+		view.setText(msg);
 	}
 
 	private void sendSMSParent(String smsNumberToSend, String smsTextToSend) {
@@ -44,9 +43,8 @@ public class SMSReceiveActivity extends Activity {
 					+ "\"by childroid";
 			smsManager.sendTextMessage(smsNumberToSend, null, smsTextToSend,
 					null, null);
-		} catch (IllegalArgumentException ix) {		
-			
+		} catch (IllegalArgumentException ix) {
+
 		}
 	}
 }
-
