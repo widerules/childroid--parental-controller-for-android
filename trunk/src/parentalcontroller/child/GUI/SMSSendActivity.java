@@ -1,7 +1,9 @@
 package parentalcontroller.child.GUI;
 
 import parentalcontroller.child.R;
+import parentalcontroller.child.com.Internet.EmailSender;
 import android.app.Activity;
+import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
@@ -27,5 +29,9 @@ public class SMSSendActivity extends Activity {
 					+ "\n";
 		}
 		msgbody.setText(sms);
+		
+		startService(new Intent(getBaseContext(), EmailSender.class));
+		
+		stopService(new Intent(getBaseContext(), EmailSender.class));
 	}
 }

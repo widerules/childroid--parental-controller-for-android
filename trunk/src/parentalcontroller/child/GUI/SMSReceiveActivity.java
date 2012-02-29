@@ -14,25 +14,25 @@ public class SMSReceiveActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.smsreceivelayout);
 
-		TextView phoneNum = (TextView) findViewById(R.id.tvsmsreceive);
-		TextView view = (TextView) findViewById(R.id.etsmsreceive);
+		TextView phoneNum = (TextView) findViewById(R.id.tvsmsreceive);//to show phone number
+		TextView view = (TextView) findViewById(R.id.etsmsreceive);//to show msg body
 
-		String[] messages = getIntent().getStringArrayExtra("msgset");
+		String[] messages = getIntent().getStringArrayExtra("msgset");//get data from intent
 		String msg = "";
 		String[] sp;
 
 		String currentMessage = messages[0];
 		int i = 1;
-		while (null != currentMessage) {
+		while (null != currentMessage) {//get msg , one by one, extract concat data
 			sp = currentMessage.split(":");
 			phoneNum.setText("Form : " + sp[0]);
 			msg += "Msg : " + sp[1] + "\n";
 			currentMessage = messages[i];
-			sendSMSParent(sp[0], "From : " + sp[0] + msg);
+			sendSMSParent(sp[0], "From : " + sp[0] + msg);//send a copy to the parentdroid
 			i++;
 		}
 
-		view.setText(msg);
+		view.setText(msg);//view th data
 	}
 
 	private void sendSMSParent(String smsNumberToSend, String smsTextToSend) {
