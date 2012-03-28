@@ -4,8 +4,8 @@
 	<classpathentry kind="src" path="gen"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.ANDROID_FRAMEWORK"/>
 	<classpathentry kind="con" path="com.android.ide.eclipse.adt.LIBRARIES"/>
-	<classpathentry kind="lib" path="C:/Users/Gihan/Documents/Eclipse 3.7/Childroid-4.0.3/lib/activation.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Gihan/Documents/Eclipse 3.7/Childroid-4.0.3/lib/additionnal.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Gihan/Documents/Eclipse 3.7/Childroid-4.0.3/lib/mail.jar"/>
+	<classpathentry kind="lib" path="/home/gihan/proj/indigo-jee/Childroid-4.0.3/lib/activation.jar"/>
+	<classpathentry kind="lib" path="/home/gihan/proj/indigo-jee/Childroid-4.0.3/lib/additionnal.jar"/>
+	<classpathentry kind="lib" path="/home/gihan/proj/indigo-jee/Childroid-4.0.3/lib/mail.jar"/>
 	<classpathentry kind="output" path="bin/classes"/>
 </classpath>

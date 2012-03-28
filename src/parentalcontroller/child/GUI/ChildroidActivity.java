@@ -1,13 +1,15 @@
 package parentalcontroller.child.GUI;
 
 import parentalcontroller.child.R;
+import parentalcontroller.child.Logic.GetInstallApplicationService;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
-public class ChildroidActivity extends Activity {
+public class ChildroidActivity extends Activity{
 	private Button btmain;
 	private Button btmsg;
 	private Button btemail;
@@ -22,9 +24,11 @@ public class ChildroidActivity extends Activity {
 		btmain = (Button) findViewById(R.id.buttonMain);
 		btmain.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				Intent i = new Intent(ChildroidActivity.this,
-						MapViewActivity.class);
-				startActivity(i);
+//				Intent i = new Intent(ChildroidActivity.this,
+//						MapViewActivity.class);
+//				startActivity(i);
+				Intent intent = new Intent(ChildroidActivity.this, GetInstallApplicationService.class);
+				startService(intent);
 			}
 		});
 
@@ -78,6 +82,11 @@ public class ChildroidActivity extends Activity {
 				Intent l = new Intent(ChildroidActivity.this,
 						MapViewActivity.class);
 				startActivity(l);
+				
+				//startService(new Intent(getBaseContext(), MyService.class));
+								
+				Log.d("gihan", "clicked map show");
+
 			}
 		});
 	}
