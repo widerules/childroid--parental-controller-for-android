@@ -21,6 +21,9 @@ public class ChildroidActivity extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 
+		/*
+		 * show the mail default botton
+		 */
 		btmain = (Button) findViewById(R.id.buttonMain);
 		btmain.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -31,7 +34,9 @@ public class ChildroidActivity extends Activity{
 				startService(intent);
 			}
 		});
-
+		/*
+		 * send the msg to parentdroid
+		 */
 		this.btmsg = (Button) findViewById(R.id.showmsgbutton);
 		this.btmsg.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -41,6 +46,9 @@ public class ChildroidActivity extends Activity{
 			}
 		});
 		
+		/*
+		 * send email to the parentdroid
+		 */
 		this.btemail = (Button) findViewById(R.id.bSendMail);
 		this.btemail.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
@@ -76,6 +84,9 @@ public class ChildroidActivity extends Activity{
 			}
 		});
 		
+		/*
+		 * show the map location of childroid
+		 */
 		this.btmap = (Button) findViewById(R.id.buttonShowMap);
 		this.btmap.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {

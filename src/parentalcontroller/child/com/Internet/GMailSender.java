@@ -28,11 +28,16 @@ public class GMailSender extends javax.mail.Authenticator {
     private Session session;  
     private Multipart multipart; 
     
-
+    /*
+     * set JSSEP
+     */
     static {   
         Security.addProvider(new JSSEProvider());   
     }  
 
+    /*
+     * Send the mail to Gmail
+     */
     public GMailSender(String user, String password) {   
         this.user = user;   
         this.password = password;   
@@ -53,10 +58,15 @@ public class GMailSender extends javax.mail.Authenticator {
         multipart = new MimeMultipart();
     }   
 
+    /*get the password authontication form gmail
+     */
     protected PasswordAuthentication getPasswordAuthentication() {   
         return new PasswordAuthentication(user, password);   
     }   
 
+    /*
+     * send email with text body
+     */
     public synchronized void sendMail(String subject, String body, String sender, String recipients) throws Exception {   
         try{
         MimeMessage message = new MimeMessage(session);   
@@ -77,7 +87,10 @@ public class GMailSender extends javax.mail.Authenticator {
 
         }
     } 
-    
+   
+    /*
+     * add a attachment to the mail
+     */
     public void addAttachment(String filename,String subject) throws Exception { 
         BodyPart messageBodyPart = new MimeBodyPart(); 
         DataSource source = new FileDataSource(filename); 
@@ -92,10 +105,16 @@ public class GMailSender extends javax.mail.Authenticator {
     } 
 
 
+    /*
+     * get the source in bytes
+     */
     public class ByteArrayDataSource implements DataSource {   
         private byte[] data;   
         private String type;   
 
+        /*
+         * 
+         */
         public ByteArrayDataSource(byte[] data, String type) {   
             super();   
             this.data = data;   
@@ -110,7 +129,8 @@ public class GMailSender extends javax.mail.Authenticator {
         public void setType(String type) {   
             this.type = type;   
         }   
-
+        /*get content type
+         */
         public String getContentType() {   
             if (type == null)   
                 return "application/octet-stream";   
@@ -118,10 +138,14 @@ public class GMailSender extends javax.mail.Authenticator {
                 return type;   
         }   
 
+        /*get a input instrame to the file
+         */
         public InputStream getInputStream() throws IOException {   
             return new ByteArrayInputStream(data);   
         }   
 
+        /*get name
+         */
         public String getName() {   
             return "ByteArrayDataSource";   
         }   

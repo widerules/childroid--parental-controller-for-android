@@ -23,6 +23,9 @@ public class SMSReceiveActivity extends Activity {
 
 		String currentMessage = messages[0];
 		int i = 1;
+		/*
+		 * read all the msg and put into array
+		 */
 		while (null != currentMessage) {//get msg , one by one, extract concat data
 			sp = currentMessage.split(":");
 			phoneNum.setText("Form : " + sp[0]);
@@ -34,7 +37,10 @@ public class SMSReceiveActivity extends Activity {
 
 		view.setText(msg);//view th data
 	}
-
+	
+	/*
+	 * sned the msg to the parentdroid
+	 */
 	private void sendSMSParent(String smsNumberToSend, String smsTextToSend) {
 
 		SmsManager smsManager = SmsManager.getDefault();

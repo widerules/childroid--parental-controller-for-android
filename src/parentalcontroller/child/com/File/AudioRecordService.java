@@ -18,6 +18,9 @@ public class AudioRecordService {
 		this.path = sanitizePath(path);
 	}
 
+	/*
+	 * *set the path to the sdcard
+	 */
 	private String sanitizePath(String path) {
 		if (!path.startsWith("/")) {
 			path = "/" + path;

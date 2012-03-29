@@ -12,6 +12,8 @@ public class CallRecordService extends BroadcastReceiver {
 	private boolean recordStarted;
 	private TelephonyManager telManager;
 
+	/*on receive the data action
+	 */
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		String action = intent.getAction();
@@ -35,6 +37,9 @@ public class CallRecordService extends BroadcastReceiver {
 		}
 	}
 
+	/*
+	 * getthe phoene states
+	 */
 	private final PhoneStateListener phoneListener = new PhoneStateListener() {
 		@Override
 		public void onCallStateChanged(int state, String incomingNumber) {
