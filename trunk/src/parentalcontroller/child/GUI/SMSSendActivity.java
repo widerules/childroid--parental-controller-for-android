@@ -11,6 +11,8 @@ import android.widget.TextView;
 
 public class SMSSendActivity extends Activity {
 
+	/*show the details of the msgs
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
