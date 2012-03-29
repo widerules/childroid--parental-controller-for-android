@@ -55,10 +55,10 @@ public class ChildroidActivity extends Activity{
 				emailIntent.putExtra(android.content.Intent.EXTRA_CC, aEmailCCList);  
 				emailIntent.putExtra(android.content.Intent.EXTRA_BCC, aEmailBCCList);  
 				  
-				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My subject");  
+				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "My subject by Gihan");  
 				  
 				emailIntent.setType("plain/text");  
-				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "My message body.");  
+				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT, "My message body by Gihan.");  
 				  
 				startActivity(emailIntent); 
 				
