@@ -34,87 +34,15 @@ public class ChildroidActivity extends Activity {
 		btmain = (Button) findViewById(R.id.buttonMain);
 		btmain.setOnClickListener(new View.OnClickListener() {
 			public void onClick(View arg0) {
-				// Intent i = new Intent(ChildroidActivity.this,
-				// MapViewActivity.class);
-				// startActivity(i);
-				// Intent intent = new Intent(ChildroidActivity.this,
-				// DeviceAdmin.class);
-				// startService(intent);
+				
 				Toast.makeText(getBaseContext(),
 						"The custom preference has been clicked",
 						Toast.LENGTH_LONG).show();
 
 				authenticate();
-					Log.d("authentication", "yes, view ");
-				
-				
+					Log.d("authentication", "yes, view ");								
 			}
-		});
-		/*
-		 * send the msg to parentdroid
-		 */
-		this.btmsg = (Button) findViewById(R.id.showmsgbutton);
-		this.btmsg.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
-				Intent l = new Intent(ChildroidActivity.this,
-						SMSSendActivity.class);
-				startActivity(l);
-			}
-		});
-
-		/*
-		 * send email to the parentdroid
-		 */
-		this.btemail = (Button) findViewById(R.id.bSendMail);
-		this.btemail.setOnClickListener(new View.OnClickListener() {
-			public void onClick(View arg0) {
-
-				Intent emailIntent = new Intent(
-						android.content.Intent.ACTION_SEND);
-
-				String aEmailList[] = { "ak47gc@gmail.com",
-						"jayani2010@gmail.com" };
-				String aEmailCCList[] = { "ak47gc@gmail.com",
-						"jayani2010@gmail.com" };
-				String aEmailBCCList[] = { "ak47gc@gmail.com",
-						"jayani2010@gmail.com" };
-
-				emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL,
-						aEmailList);
-				emailIntent.putExtra(android.content.Intent.EXTRA_CC,
-						aEmailCCList);
-				emailIntent.putExtra(android.content.Intent.EXTRA_BCC,
-						aEmailBCCList);
-
-				emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
-						"My subject by Gihan");
-
-				emailIntent.setType("plain/text");
-				emailIntent.putExtra(android.content.Intent.EXTRA_TEXT,
-						"My message body by Gihan.");
-
-				startActivity(emailIntent);
-
-				/*
-				 * final Intent emailIntent = new
-				 * Intent(android.content.Intent.ACTION_SEND);
-				 * 
-				 * emailIntent.setType("plain/text");
-				 * 
-				 * emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new
-				 * String[]{ "ak47gc@gmail.com","jayani2010@gmail.com"});
-				 * 
-				 * emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT,
-				 * "Test msg");
-				 * 
-				 * emailIntent.putExtra(android.content.Intent.EXTRA_TEXT,
-				 * "Hurray, its working....");
-				 * 
-				 * startActivity(Intent.createChooser(emailIntent,
-				 * "Send mail..."));
-				 */
-			}
-		});
+		});		
 
 		/*
 		 * show the map location of childroid
@@ -125,11 +53,7 @@ public class ChildroidActivity extends Activity {
 				Intent l = new Intent(ChildroidActivity.this,
 						MapViewActivity.class);
 				startActivity(l);
-
-				// startService(new Intent(getBaseContext(), MyService.class));
-
 				Log.d("gihan", "clicked map show");
-
 			}
 		});
 	}

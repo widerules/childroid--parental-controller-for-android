@@ -5,13 +5,13 @@
     <string name="smsreceivetopic">SMS receive from Parentdroid</string>
     <string name="smsreceivetxt">Recieved SMS</string>
     <string name="smssendtxt">Sent SMS</string>
-    <string name="mainButton">Default Button</string>
+    <string name="mainButton">Change Settings</string>
     <string name="showmsgbutton">Show Sent Msg</string>
     <string name="smssendbody">Sent msg</string>
     <string name="smssendtopic">Sent sms</string>
     <string name="sendemailbutton">Send Email</string>
     <string name="mapviewtopic">Map View</string>
-    <string name="showchildlocation">Show Childroid Location</string>
+    <string name="showchildlocation">Set Childroid Location(Demo)</string>
     <string name="username">User Name</string>
     <string name="usernametext">admin</string>
     <string name="password">Password</string>
