@@ -44,7 +44,10 @@ public class ChildroidActivity extends Activity {
 						"The custom preference has been clicked",
 						Toast.LENGTH_LONG).show();
 
-				authenticate();				
+				authenticate();
+					Log.d("authentication", "yes, view ");
+				
+				
 			}
 		});
 		/*
@@ -134,7 +137,7 @@ public class ChildroidActivity extends Activity {
 	private boolean authenticate() {
 		final Context context = this;
 		boolean isAdmin = false;
-		
+
 		// get prompts.xml view
 		LayoutInflater li = LayoutInflater.from(context);
 		View promptsView = li.inflate(R.layout.loginlayout, null);
@@ -145,8 +148,10 @@ public class ChildroidActivity extends Activity {
 		// set prompts.xml to alertdialog builder
 		alertDialogBuilder.setView(promptsView);
 
-		final EditText username = (EditText) promptsView.findViewById(R.id.txusername);
-		final EditText password = (EditText) promptsView.findViewById(R.id.txpassword);
+		final EditText username = (EditText) promptsView
+				.findViewById(R.id.txusername);
+		final EditText password = (EditText) promptsView
+				.findViewById(R.id.txpassword);
 
 		// set dialog message
 		alertDialogBuilder
@@ -155,13 +160,24 @@ public class ChildroidActivity extends Activity {
 					public void onClick(DialogInterface dialog, int id) {
 						// get user input and set it to result
 						// edit text
-						//result.setText(userInput.getText());
+						// result.setText(userInput.getText());
 						Log.d("authentication", username.getText().toString());
 						Log.d("authentication", password.getText().toString());
-						
-						Intent settingsActivity = new Intent(getBaseContext(),
-								DeviceAdmin.class);
-						startActivity(settingsActivity);
+
+						// get the password saved and compare with enterd password
+						LoginInfo log = getPrefs();
+						Log.d("checking", "is matched");
+						Log.d("authentication", "->" + username.getText().toString());
+						Log.d("authentication", "->" + password.getText().toString());
+						if (log.username.equals(username.getText().toString())) {
+							Log.d("checking", "username matched");
+							if (log.password.equals(password.getText().toString())) {
+								Log.d("checking", "passowrd matched");
+								Intent settingsActivity = new Intent(getBaseContext(),
+										DeviceAdmin.class);
+								startActivity(settingsActivity);
+							}
+						}
 					}
 				})
 				.setNegativeButton("Cancel",
@@ -179,42 +195,37 @@ public class ChildroidActivity extends Activity {
 
 		return isAdmin;
 	}
-	private void getPrefs() {
-		boolean CheckboxPreference;
-        String ListPreference;
-        String editTextPreference;
-        String ringtonePreference;
-        String secondEditTextPreference;
-        String customPref;
-        // Get the xml/preferences.xml preferences
-        SharedPreferences prefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
-        
-        CheckboxPreference = prefs.getBoolean("checkboxPref", true);
-        ListPreference = prefs.getString("listPref", "nr1");
-        editTextPreference = prefs.getString("editTextPref",
-                        "Nothing has been entered");
-        ringtonePreference = prefs.getString("ringtonePref",
-                        "DEFAULT_RINGTONE_URI");
-        secondEditTextPreference = prefs.getString("SecondEditTextPref",
-                        "Nothing has been entered");
-        // Get the custom preference
-        SharedPreferences mySharedPreferences = getSharedPreferences(
-                        "myCustomSharedPrefs", Activity.MODE_PRIVATE);
-        customPref = mySharedPreferences.getString("myCusomPref", "");
-}
-	class LoginInof{
+
+	/*
+	 * get the password from the xml file (previously saved) return: As the
+	 * LoginInfo class : username and password
+	 */
+	private LoginInfo getPrefs() {
+
+		// Get the xml/preferences.xml preferences
+		SharedPreferences prefs = PreferenceManager
+				.getDefaultSharedPreferences(getBaseContext());
+
+		LoginInfo log = new LoginInfo(prefs.getString("userNamePref", "admin"),
+				prefs.getString("passwordPref", "admin"));
+
+		return log;
+	}
+
+	class LoginInfo {
 		private String username;
 		private String password;
-		
-		public LoginInof(String name, String pass) {
+
+		public LoginInfo(String name, String pass) {
 			// TODO Auto-generated constructor stub
 			this.username = name;
-			this.password=pass;
+			this.password = pass;
 		}
-		
+
 		protected String getUserName() {
 			return this.username;
 		}
+
 		protected String getPassword() {
 			return this.password;
 		}
