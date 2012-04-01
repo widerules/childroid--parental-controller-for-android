@@ -3,6 +3,8 @@ package parentalcontroller.child.Logic;
 import java.util.ArrayList;
 import java.util.List;
 
+import parentalcontroller.child.GUI.MapViewActivity;
+
 import android.app.ActivityManager;
 import android.app.IntentService;
 import android.content.Intent;
@@ -52,6 +54,9 @@ public class GetInstallApplicationService extends IntentService {
 				}
 			}
 		}
+		Intent i = new Intent(this, MapViewActivity.class);
+		//startActivity(i);
+		
 		//getPackages();
 	}
 
