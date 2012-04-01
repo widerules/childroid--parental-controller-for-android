@@ -20,6 +20,18 @@
             android:key="listPref"
             android:summary="This preference allows to select an item in a array"
             android:title="List Preference" />
+
+        <EditTextPreference
+            android:inputType="textEmailAddress"
+            android:key="emailPref"
+            android:summary="Email receive address"
+            android:title="Email Address" />
+        <EditTextPreference
+            android:ems="10"
+            android:inputType="phone"
+            android:key="telnumPref"
+            android:summary="Message forward to this Number"
+            android:title="Telephone number" />
     </PreferenceCategory>
     <PreferenceCategory android:title="Account Settings" >
         <PreferenceScreen
@@ -31,10 +43,10 @@
                 android:summary="Enter a new User Name"
                 android:title="User Name" />
             <EditTextPreference
+                android:inputType="textPassword"
                 android:key="passwordPref"
                 android:summary="Enter a new Password"
-                android:title="New Password"
-                android:inputType="textPassword" />
+                android:title="New Password" />
         </PreferenceScreen>
     </PreferenceCategory>
 
