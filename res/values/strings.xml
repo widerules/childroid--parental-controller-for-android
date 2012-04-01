@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+
 <resources>
 
     <string name="hello">Developed by Gihan Chanuka...</string>
@@ -21,5 +22,13 @@
     <string name="loginbutton">Login</string>
     <string name="cancel">Cancel</string>
     <string name="installapp">Show Install Apps</string>
-
+    <string name="adminlabel">Admin Lable </string>
+    <string name="admindis">Admin Description</string>
+    <string name="admin_receiver_status_enabled">admin_receiver_status_enabled</string>
+    <string name="admin_receiver_status_disabled">admin_receiver_status_disabled</string>
+    <string name="admin_receiver_status">admin_receiver_status</string>
+    <string-array name="listArray"/>
+    <string-array name="listValues"/>
+    
+    
 </resources>
