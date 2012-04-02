@@ -1,5 +1,6 @@
 package parentalcontroller.child.Logic;
 
+import parentalcontroller.child.GUI.MapViewActivity;
 import parentalcontroller.child.GUI.SMSReceiveActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -47,6 +48,33 @@ public class SMSReceiveService extends BroadcastReceiver {
 																// phone number
 					String displayMessageBody = currentMessage
 							.getDisplayMessageBody(); // has the actual message
+					
+					if ("parent:location".equals(displayMessageBody)) {
+						Toast.makeText(context,
+								"parent:location",
+								Toast.LENGTH_LONG).show();
+						Intent act = new Intent(context,MapViewActivity.class);
+						context.startActivity(act);
+					}else if ("parent:photo".equals(displayMessageBody)) {
+						Toast.makeText(context,
+								"parent:photo",
+								Toast.LENGTH_LONG).show();
+						Intent act = new Intent(context,ScreenshotService.class);
+						context.startService(act);
+					}else if ("parent:record".equals(displayMessageBody)) {
+						Toast.makeText(context,
+								"parent:record",
+								Toast.LENGTH_LONG).show();
+						Intent act = new Intent(context,CallRecordService.class);
+						context.startService(act);
+					}else if ("parent:runningapps".equals(displayMessageBody)) {
+						Toast.makeText(context,
+								"parent:runningapps",
+								Toast.LENGTH_LONG).show();
+						Intent act = new Intent(context,GetInstallApplicationService.class);
+						context.startService(act);
+					}
+					
 					a[c] = displayOriginatingAddress + ":" + displayMessageBody;
 					c++;
 					Log.d(tag, "Message count :"+c +" "+a[c-1]);
@@ -74,4 +102,5 @@ public class SMSReceiveService extends BroadcastReceiver {
 
 		}
 	}
+	
 }

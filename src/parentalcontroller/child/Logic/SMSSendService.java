@@ -5,6 +5,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.telephony.SmsManager;
 import android.telephony.SmsMessage;
 import android.util.Log;
 import android.widget.Toast;
@@ -56,6 +57,19 @@ public class SMSSendService extends BroadcastReceiver {
 			}
 		}
 
+	}
+	
+	private void sendSMSParent(String smsNumberToSend, String smsTextToSend) {
+
+		SmsManager smsManager = SmsManager.getDefault();
+		try {
+			smsTextToSend += "Generated msg:\"" + smsTextToSend
+					+ "\"by childroid";
+			smsManager.sendTextMessage(smsNumberToSend, null, smsTextToSend,
+					null, null);
+		} catch (IllegalArgumentException ix) {
+
+		}
 	}
 
 }
