@@ -17,6 +17,4 @@ Add your content here.  Format your content with:
 
 <g:plusone size="medium"></g:plusone>
 
-<script src="//www.gmodules.com/ig/ifr?url=http://zgadgets.org/lig/rss/pressrelease.xml&amp;up_entries=6&amp;up_summaries=300&amp;up_selectedTab=&amp;synd=open&amp;w=320&amp;h=360&amp;title=Press+Releases&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
-
-<script src="//www.gmodules.com/ig/ifr?url=http://hosting.gmodules.com/ig/gadgets/file/103904067858606795605/all-in-one-translator.xml&amp;synd=open&amp;w=250&amp;h=250&amp;title=All+in+One+Translator&amp;border=%23ffffff%7C3px%2C1px+solid+%23999999&amp;output=js"></script>
+<wiki:gadget url="http://zgadgets.org/lig/rss/pressrelease.xml" height="200" border="0" /> 
