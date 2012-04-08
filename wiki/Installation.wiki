@@ -3,15 +3,13 @@
 
 <wiki:toc max_depth="2" />
 
-= Introduction =
-
-= Details =
-
-Add your content here.  Format your content with:
+= 1.Introduction =
+===<i>This wiki show the requirements need for install the application, permissions which want to run the application and installation steps for Childroid.  </i> ===
+= 2.Details =
   
-==System Requirements==
-==Permissions==
-==Installing guide==
+==2.1. System Requirements==
+==2.2. Permissions==
+==2.3. Installing guide==
 
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/114106773607558272009/share.xml" height="200" border="0" />
