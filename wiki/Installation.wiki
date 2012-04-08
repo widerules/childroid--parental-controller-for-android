@@ -15,8 +15,7 @@ Add your content here.  Format your content with:
 
 
 
-<g:plusone size="medium"></g:plusone>
 
 <wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/114106773607558272009/share.xml" height="200" border="0" />
 
-<wiki:gadget url="http://www.primekeeper.com/contactbox.xml" height="200" border="0" /> 
+<wiki:gadget url="http://www.primekeeper.com/contactbox.xml" height="150" border="1" /> 
