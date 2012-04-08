@@ -1,9 +1,9 @@
 #labels Phase-Support
 #Install Childroid application on Android device.
+
 <wiki:toc max_depth="2" />
+
 = Introduction =
-
-
 
 = Details =
 
@@ -14,6 +14,4 @@ Add your content here.  Format your content with:
 ==Installing guide==
 
 
-
-
-<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/114106773607558272009/share.xml" height="200" border="2" />
+<wiki:gadget url="http://hosting.gmodules.com/ig/gadgets/file/114106773607558272009/share.xml" height="200" border="0" />
