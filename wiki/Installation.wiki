@@ -5,7 +5,7 @@ under construction
 
 <wiki:toc max_depth="3" />
 
-= 1.Introduction =
+== 1.Introduction ==
 =====<i>This wiki show the requirements need for install the application, permissions which want to run the application and installation steps for Childroid.  </i> =====
 <br/>
 == 2.Details ==
